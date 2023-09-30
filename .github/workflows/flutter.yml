@@ -7,7 +7,7 @@ on:
 
   pull_request:
     branches:
-      - main  # Cambia "main" al nombre de tu rama principal si es diferente
+      - main
 jobs:
   flutter_test:
     name: Run Flutter Test and analyze
