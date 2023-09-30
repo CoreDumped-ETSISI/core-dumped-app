@@ -18,10 +18,12 @@ class Unauthenticated extends AuthState {
 }
 
 class AuthError extends AuthState {
-  final String error;
+  final String errorType;
+  final String? errorMessage;
 
-  AuthError(this.error);
+  AuthError(this.errorType, {this.errorMessage});
 
   @override
-  List<Object> get props => [error];
+  List<Object> get props =>
+      [errorType, if (errorMessage != null) errorMessage!];
 }

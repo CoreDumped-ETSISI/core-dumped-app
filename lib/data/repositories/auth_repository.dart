@@ -5,7 +5,7 @@ class AuthRepository {
 
   Future<void> signUp({required String email, required String password}) async {
     try {
-      _firebaseAuthauth.createUserWithEmailAndPassword(
+      await _firebaseAuthauth.createUserWithEmailAndPassword(
           email: email, password: password);
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
@@ -18,16 +18,19 @@ class AuthRepository {
     }
   }
 
-  Future<void> signIn({required String email, required String password}) async {
+  Future signIn({required String email, required String password}) async {
     try {
-      _firebaseAuthauth.signInWithEmailAndPassword(
+      UserCredential user = await _firebaseAuthauth.signInWithEmailAndPassword(
           email: email, password: password);
+      return user;
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
         throw Exception('No user found for that email.');
       } else if (e.code == 'wrong-password') {
         throw Exception('Wrong password provided for that user.');
       }
+    } catch (e) {
+      throw Exception('Unknown error: $e');
     }
   }
 

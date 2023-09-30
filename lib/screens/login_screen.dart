@@ -1,5 +1,6 @@
 import 'package:animate_gradient/animate_gradient.dart';
 import 'package:coredumpedapp/bloc/auth/auth_bloc.dart';
+import 'package:coredumpedapp/utils/custom_snackbar.dart';
 import 'package:coredumpedapp/widgets/custom_button.dart';
 import 'package:coredumpedapp/widgets/custom_textfield.dart';
 import 'package:coredumpedapp/widgets/square_tile.dart';
@@ -38,15 +39,22 @@ class LoginScreen extends StatelessWidget {
             child: Center(
               child: BlocListener<AuthBloc, AuthState>(
                 listener: (context, state) {
-                  print("INIT STATE + $state");
                   if (state is Authenticated) {
                     Get.offNamed('/home');
+                    showCustomSnackbar(
+                      'Welcome back!',
+                      'You have successfully logged in.',
+                      SnackPosition.TOP,
+                      Colors.greenAccent,
+                      const Icon(Icons.check, color: Colors.white),
+                    );
                   } else if (state is AuthError) {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(
-                        content: Text(state.error),
-                        backgroundColor: Colors.red,
-                      ),
+                    showCustomSnackbar(
+                      state.errorType,
+                      state.errorMessage ?? '',
+                      SnackPosition.TOP,
+                      Colors.redAccent,
+                      const Icon(Icons.error, color: Colors.white),
                     );
                   }
                 },
