@@ -1,0 +1,27 @@
+name: Flutter CI
+
+on:
+  push:
+    branches:
+      - develop  # Cambia "main" al nombre de tu rama principal si es diferente
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v5
+        with:
+          flutter-version: stable  # Puedes cambiar a "beta" o "dev" si lo deseas
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Run tests
+        run: flutter test
+
+    # Puedes agregar más pasos aquí, como construir la aplicación o enviar notificaciones, según tus necesidades.
