@@ -1,12 +1,12 @@
 import 'package:firebase_auth/firebase_auth.dart';
 
 class AuthRepository {
-  final FirebaseAuth auth = FirebaseAuth.instance;
+  final FirebaseAuth _firebaseAuthauth = FirebaseAuth.instance;
 
   Future<void> signUp({required String email, required String password}) async {
     try {
-      FirebaseAuth.instance
-          .createUserWithEmailAndPassword(email: email, password: password);
+      _firebaseAuthauth.createUserWithEmailAndPassword(
+          email: email, password: password);
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
         throw Exception('The password is too weak.');
@@ -16,5 +16,22 @@ class AuthRepository {
     } catch (e) {
       throw Exception('Unknown error: $e');
     }
+  }
+
+  Future<void> signIn({required String email, required String password}) async {
+    try {
+      _firebaseAuthauth.signInWithEmailAndPassword(
+          email: email, password: password);
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'user-not-found') {
+        throw Exception('No user found for that email.');
+      } else if (e.code == 'wrong-password') {
+        throw Exception('Wrong password provided for that user.');
+      }
+    }
+  }
+
+  Future<void> signOut() async {
+    await _firebaseAuthauth.signOut();
   }
 }
