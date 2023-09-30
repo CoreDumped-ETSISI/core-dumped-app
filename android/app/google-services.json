@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "296649781093",
+    "firebase_url": "https://core-dumped-app-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "core-dumped-app",
+    "storage_bucket": "core-dumped-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:296649781093:android:5a77e7590faa2f4121fb8c",
+        "android_client_info": {
+          "package_name": "com.example.coredumpedapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMfNCb49Vb8KFOVejlIiEUG_5z9PmJwDw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

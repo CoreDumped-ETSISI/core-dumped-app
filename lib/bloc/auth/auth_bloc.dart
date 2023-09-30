@@ -17,7 +17,9 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
             email: event.email, password: event.password);
         emit(Authenticated());
       } catch (e) {
-        emit(Unauthenticated());
+        emit(AuthError(
+          e.toString(),
+        ));
       }
     });
 
@@ -29,7 +31,9 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
             email: event.email, password: event.password);
         emit(Authenticated());
       } catch (e) {
-        emit(Unauthenticated());
+        emit(AuthError(
+          e.toString(),
+        ));
       }
     });
 
@@ -40,7 +44,9 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           await authRepository.signOut();
           emit(Unauthenticated());
         } catch (e) {
-          emit(Authenticated());
+          emit(AuthError(
+            e.toString(),
+          ));
         }
       }
     });
