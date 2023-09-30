@@ -71,6 +71,8 @@ class LoginScreen extends StatelessWidget {
                             ? Colors.redAccent
                             : Colors.black,
                       ),
+                      /*const RiveAnimation.asset(
+                          'assets/rive/shake_lock_icon.riv'),*/
                       const SizedBox(height: 25),
                       CustomTextField(
                         controller: emailController,
