@@ -1,6 +1,6 @@
-# Contributing to `<Project Name>`
+# Contributing to `Core Dumped APP`
 
-We welcome contributions to `<Project Name>`! If you're looking to contribute, there are a few things you should know.
+We welcome contributions to `Core Dumped APP`! If you're looking to contribute, there are a few things you should know.
 
 ## Pull Requests
 
@@ -18,7 +18,7 @@ When submitting a pull request, please make sure to:
 1. Clearly describe the problem you're solving.
 2. Reference any relevant issues or documentation.
 3. Explain your solution and why it's the best approach.
-4. Ensure that your code is properly formatted and follows the [style guide](./STYLE_GUIDE.md).
+4. Ensure that your code is properly formatted and follows the [style guide](STYLE_GUIDE.md).
 5. Include tests that validate your changes.
 6. Code of Conduct
 
