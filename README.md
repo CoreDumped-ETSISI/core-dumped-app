@@ -47,8 +47,6 @@ Our Flutter GitHub project offers a user-friendly app that provides a comprehens
    ```bash
    flutter run
 
-
-
 ## Contributing
 
 We welcome contributions from developers, designers, and tech enthusiasts who share our commitment to open-source development and education. If you want to contribute to Core Dumped APP, please follow the guidelines in the [CONTRIBUTING.md](./other/CONTRIBUTING.md) file.
