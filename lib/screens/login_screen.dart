@@ -25,17 +25,20 @@ class LoginScreen extends StatelessWidget {
           FocusScope.of(context).unfocus();
         },
         child: Stack(children: [
-          AnimateGradient(primaryColors: const [
-            Color(0xff42b351),
-            Color(0xFFADDFA9),
-            Color(0XFFded3ee),
-            Color(0Xffffffeb),
-          ], secondaryColors: const [
-            Color(0Xffffffeb),
-            Color(0XFFded3ee),
-            Color(0xFFADDFA9),
-            Color(0xff42b351),
-          ]),
+          AnimateGradient(
+            primaryColors: const [
+              Color(0xff42b351),
+              Color(0xFFADDFA9),
+              Color(0XFFded3ee),
+              Color(0Xffffffeb),
+            ],
+            secondaryColors: const [
+              Color(0Xffffffeb),
+              Color(0XFFded3ee),
+              Color(0xFFADDFA9),
+              Color(0xff42b351),
+            ],
+          ),
           SafeArea(
             child: SingleChildScrollView(
               child: Center(
