@@ -24,6 +24,7 @@ dependencies:
   flutter_shake_animated: ^0.0.5
   rive: ^0.11.17
   floating_frosted_bottom_bar: ^0.0.1
+  dartz: ^0.10.1
 
 dev_dependencies:
   flutter_test:
