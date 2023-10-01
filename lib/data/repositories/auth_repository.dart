@@ -18,7 +18,8 @@ class AuthRepository {
     }
   }
 
-  Future signIn({required String email, required String password}) async {
+  Future<UserCredential?> signIn(
+      {required String email, required String password}) async {
     try {
       UserCredential user = await _firebaseAuthauth.signInWithEmailAndPassword(
           email: email, password: password);
@@ -32,6 +33,7 @@ class AuthRepository {
     } catch (e) {
       throw Exception('Unknown error: $e');
     }
+    return null;
   }
 
   Future<void> signOut() async {

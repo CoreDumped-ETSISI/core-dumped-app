@@ -64,15 +64,10 @@ class LoginScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       const SizedBox(height: 50),
-                      Icon(
+                      const Icon(
                         Icons.lock,
                         size: 100,
-                        color: authBloc.state is AuthError
-                            ? Colors.redAccent
-                            : Colors.black,
                       ),
-                      /*const RiveAnimation.asset(
-                          'assets/rive/shake_lock_icon.riv'),*/
                       const SizedBox(height: 25),
                       CustomTextField(
                         controller: emailController,
