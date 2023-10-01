@@ -17,7 +17,7 @@ class AppRoutes {
     ),
     GetPage(
       name: '/home',
-      page: () => HomeScreen(),
+      page: () => const HomeScreen(),
       transition: Transition.fadeIn,
     )
   ];
