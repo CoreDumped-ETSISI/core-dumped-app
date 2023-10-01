@@ -3,11 +3,11 @@ name: Flutter CI
 on:
   push:
     branches:
-      - develop
+      - develop-bloc-tdd-arch
 
   pull_request:
     branches:
-      - main
+      - develop
 jobs:
   flutter_test:
     name: Run Flutter Test and analyze
