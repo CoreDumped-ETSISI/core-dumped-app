@@ -18,7 +18,7 @@ class _HomeScreenState extends State<HomeScreen>
   @override
   void initState() {
     currentPage = 0;
-    tabController = TabController(length: 5, vsync: this);
+    tabController = TabController(length: 4, vsync: this);
     tabController.animation!.addListener(
       () {
         final value = tabController.animation!.value.round();
@@ -88,7 +88,7 @@ class _HomeScreenState extends State<HomeScreen>
           controller: tabController,
           indicator: const UnderlineTabIndicator(
             borderSide: BorderSide(color: Colors.green, width: 4),
-            insets: EdgeInsets.fromLTRB(16, 0, 16, 8),
+            insets: EdgeInsets.fromLTRB(8, 0, 8, 4),
           ),
           tabs: [
             TabsIcon(
